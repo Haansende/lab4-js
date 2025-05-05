@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Home - Katrina's Company</title>
+  <div id="clock" class="clock"></div>
+  <style>
+  /* Reset basic styles */
+  *{
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+      line-height: 1.6;
+      color: #333;
+    }
+
+    /* Header, Navigation, and Footer Styling */
+    header, nav, footer {
+      background-color: #333;
+      color: #fff;
+      padding: 1rem;
+      text-align: center;
+    }
+
+    nav a {
+      color: #fff;
+      margin: 0 1rem;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    /* Hero Banner */
+    .hero {
+      background-image: url('C:/Users/haans/lab3-multipage/images/welcome text.jpg');
+      background-size: 1500px 210px;
+      background-repeat: no-repeat;
+      background-position: center;
+      color: white;
+      height: 200px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-shadow: 2px 2px 5px rgba(0,0,0,0.6);
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      margin: 0;
+    }
+
+    /* Content Section using Flexbox */
+    .content {
+      display: flex;
+      padding: 2rem;
+      gap: 2rem;
+    }
+
+    .intro, .sidebar {
+      background: #fff;
+      padding: 1.5rem;
+      border-radius: 8px;
+      flex: 1;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    footer {
+      margin-top: 2rem;
+    }
+</style>
+
+<link rel="stylesheet" href="style.css">
+
+<script src="script.js" defer></script>
+
+</head>
+
+<body>
+  <!-- Shared Header -->
+  <header>
+    <h1>Katrina's Company</h1>
+  </header>
+  
+  <!-- Navigation Bar (shared across pages) -->
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="contact.html">Contact</a>
+    <button id="themeToggle">Switch Theme</button>
+  </nav>
+
+  <!-- Hero Banner / Welcome Text -->
+  <div class="hero">
+    <h1>Welcome to Our Website</h1>
+  </div>
+
+  <!-- interactive FAQ component -->
+  <section id="faq" class="container">
+    <h2>Frequently Asked Questions</h2>
+  
+    <div class="faq-item">
+      <h3 class="question">What is this website about?</h3>
+      <p class="answer">This is a demo project for learning web development.</p>
+    </div>
+  
+    <div class="faq-item">
+      <h3 class="question">How do I toggle dark mode?</h3>
+      <p class="answer">Click the “Switch Theme” button in the nav to toggle light/dark mode.</p>
+    </div>
+  
+    <!-- add more .faq-item blocks as needed -->
+  </section>  
+
+  <!-- Main Content Section with Flexbox -->
+  <div class="content">
+    <section class="intro">
+      <h2>Introduction</h2>
+      <p>
+        Welcome to our company website! We provide high-quality services to help you achieve your goals. Our dedicated team is committed to delivering innovative solutions tailored to your needs. Explore our website to learn more about what we offer.
+      </p>
+    </section>
+
+    <aside class="sidebar">
+      <h2>Highlights</h2>
+      <ul>
+        <li>Innovative solutions</li>
+        <li>Expert team</li>
+        <li>Customer-centric approach</li>
+        <li>Efficient support</li>
+      </ul>
+    </aside>
+  </div>
+
+  <section id="team" class="container">
+    <h2>Team Members</h2>
+    <ul id="userList"></ul>
+    <button id="loadUsersBtn">Load Users</button>
+  </section> 
+  
+  <!-- Shared Footer -->
+  <footer>
+    <p>&copy; 2025 Katrina's Lab 4. All rights reserved.</p>
+  </footer>
+</body>
+</html>

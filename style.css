@@ -1,0 +1,164 @@
+/* ----------------------------------------- */
+/* Global Reset & Responsive Image Settings  */
+/* ----------------------------------------- */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* ----------------------------------------- */
+/* Shared Navigation Bar (Flexbox Layout)    */
+/* ----------------------------------------- */
+nav {
+  background-color: #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
+
+nav a {
+  color: #fff;
+  padding: 0.75rem 1rem;
+  text-decoration: none;
+  transition: background-color 0.3s ease; /* :hover transition */
+}
+
+nav a:hover,
+nav a:focus {
+  background-color: #555;
+}
+
+/* ----------------------------------------- */
+/* Layouts using Flexbox & Grid               */
+/* ----------------------------------------- */
+
+/* Flexbox Layout Example */
+.flex-container {
+  display: flex;
+  gap: 1rem;
+  padding: 1rem;
+  background-color: #f8f8f8;
+}
+
+/* Grid Layout Example */
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  padding: 1rem;
+  background-color: #f0f0f0;
+}
+
+/* ----------------------------------------- */
+/* Subtle Animation with @keyframes           */
+/* ----------------------------------------- */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animated {
+  animation: fadeInUp 1s ease-in-out forwards;
+}
+
+/* ----------------------------------------- */
+/* Media Queries for Responsive Breakpoints   */
+/* ----------------------------------------- */
+
+/* Breakpoint: Max-width 1024px */
+@media (max-width: 1024px) {
+  .flex-container {
+    flex-direction: column;
+  }
+}
+
+/* Breakpoint: Max-width 768px */
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+  }
+  .grid-container {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  }
+}
+
+/* Breakpoint: Max-width 480px */
+@media (max-width: 480px) {
+  nav a {
+    padding: 0.5rem;
+    font-size: 0.9rem;
+  }
+}
+
+/* default light theme */
+body {
+  background-color: #fff;
+  color: #333;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* dark theme overrides */
+body.dark-theme {
+  background-color: #121212;
+  color: #f0f0f0;
+}
+
+/* when the body has .dark-theme, restyle the cards too */
+body.dark-theme .intro,
+body.dark-theme .sidebar {
+  background-color: #2b2b2b;    /* dark card background */
+  color: #e0e0e0;               /* light text for contrast */
+  box-shadow: 0 2px 5px rgba(0,0,0,0.5);
+}
+
+/* if you have lists inside sidebar */
+body.dark-theme .sidebar ul li {
+  color: #e0e0e0;
+}
+
+/* FAQ: hide all answers by default */
+.answer {
+  display: none;
+  margin: 0.5rem 0 1rem;
+  line-height: 1.4;
+}
+
+/* When JS toggles .visible, reveal it */
+.answer.visible {
+  display: block;
+}
+
+/* Make the question look clickable */
+.question {
+  cursor: pointer;
+  position: relative;
+  padding-right: 1.5rem;
+}
+.question::after {
+  content: '+';               /* plus sign when collapsed */
+  position: absolute;
+  right: 0;
+}
+.answer.visible + .question::after,
+.question[aria-expanded="true"]::after {
+  content: '−';               /* minus sign when expanded */
+}
+
+.clock {
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-align: right;
+}
